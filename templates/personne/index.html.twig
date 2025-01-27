@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des Bâtiments et Personnes{% endblock %}
+
+{% block body %}
+<div class="example-wrapper">
+    <h1>Liste des Bâtiments et des Personnes</h1>
+
+    <ul>
+        {% for batiment in batiments %}
+            <li>
+                <strong>{{ batiment.name }}</strong> - {{ batiment.adresse }}
+                <ul>
+                    {% for personne in batiment.personnes %}
+                        <li>{{ personne.name }}</li>
+                    {% endfor %}
+                </ul>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
